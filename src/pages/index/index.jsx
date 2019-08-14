@@ -2,25 +2,31 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-import { add, minus, asyncAdd } from '../../store/actions/counter'
+import { add, minus, asyncAdd } from '../../store/actions/gun'
 
 import './index.scss'
 
+// @connect(
+//   ({ counter }) => ({
+//     counter
+//   }),
+//   dispatch => ({
+//     add() {
+//       dispatch(add())
+//     },
+//     dec() {
+//       dispatch(minus())
+//     },
+//     asyncAdd() {
+//       dispatch(asyncAdd())
+//     }
+//   })
+// )
 @connect(
-  ({ counter }) => ({
-    counter
+  ({ gunReducer }) => ({
+    num: gunReducer.num
   }),
-  dispatch => ({
-    add() {
-      dispatch(add())
-    },
-    dec() {
-      dispatch(minus())
-    },
-    asyncAdd() {
-      dispatch(asyncAdd())
-    }
-  })
+  { add, minus, asyncAdd }
 )
 class Index extends Component {
   config = {
@@ -43,14 +49,14 @@ class Index extends Component {
         <Button className="add_btn" onClick={this.props.add}>
           +
         </Button>
-        <Button className="dec_btn" onClick={this.props.dec}>
+        <Button className="dec_btn" onClick={this.props.minus}>
           -
         </Button>
         <Button className="dec_btn" onClick={this.props.asyncAdd}>
           async
         </Button>
         <View>
-          <Text>{this.props.counter.num}</Text>
+          <Text>{this.props.num}</Text>
         </View>
         <View>
           <Text>Hello, World3333</Text>

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import counter from './counter'
+import gunReducer from './gun'
 
 export default combineReducers({
-  counter
+  gunReducer
 })
