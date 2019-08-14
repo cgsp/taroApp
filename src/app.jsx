@@ -10,9 +10,9 @@ import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
-// if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
-//   require('nerv-devtools')
-// }
+if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
+  require('nerv-devtools')
+}
 
 const store = configStore()
 
@@ -20,6 +20,7 @@ class App extends Component {
 
   config = {
     pages: [
+      // http://127.0.0.1:10086/pages/index/index--访问路径
       'pages/index/index'
     ],
     window: {
