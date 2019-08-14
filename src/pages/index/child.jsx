@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
+import { isDev, isTest, isUat, isProd } from '../../utils'
 
 class Child extends Component {
   config = {
@@ -17,9 +18,13 @@ class Child extends Component {
   componentDidHide() {}
 
   click() {
-    console.log('前面BUILD_ENV', process.env.BUILD_ENV)
-    this.props.test(process.env.BUILD_ENV)
-    console.log('后面BUILD_ENV', process.env.BUILD_ENV)
+    // console.log('前面BUILD_ENV', process.env.BUILD_ENV)
+    // this.props.test(process.env.BUILD_ENV)
+    // console.log('后面BUILD_ENV', process.env.BUILD_ENV)
+    console.log('isDev', isDev)
+    console.log('isTest', isTest)
+    console.log('isUat', isUat)
+    console.log('isProd', isProd)
   }
   render() {
     return (
