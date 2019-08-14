@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
-import { isDev, isTest, isUat, isProd } from '../../utils'
+import { isDev, isTest, isUat, isProd } from '@/utils'
 
 class Child extends Component {
   config = {

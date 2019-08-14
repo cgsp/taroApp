@@ -1,7 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-import { add, minus, asyncAdd } from '../../store/actions/gun'
+import { add, minus, asyncAdd } from '@/store/actions/gun'
 import Child from './child'
 
 import './index.scss'
@@ -60,7 +60,7 @@ class Index extends Component {
     return (
       <View className="index">
         <Button className="add_btn" onClick={this.props.add}>
-          +
+          +111
         </Button>
         <Button className="dec_btn" onClick={this.props.minus}>
           -

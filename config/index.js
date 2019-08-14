@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'taroApp',
   date: '2019-8-12',
@@ -28,6 +30,13 @@ const config = {
     }
   },
   defineConstants: {},
+  alias: {
+    '@/constants': path.resolve(__dirname, '..', 'src/constants'),
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/pages': path.resolve(__dirname, '..', 'src/pages'),
+    '@/store': path.resolve(__dirname, '..', 'src/store'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils')
+  },
   copy: {
     patterns: [],
     options: {}
