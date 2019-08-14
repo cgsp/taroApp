@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-
 import { add, minus, asyncAdd } from '../../store/actions/gun'
+import Child from './child'
 
 import './index.scss'
 
@@ -33,15 +33,28 @@ class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(this.props, nextProps)
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: 'gsp'
+    }
+    this.test = this.test.bind(this)
   }
 
-  componentWillUnmount() {}
+  async componentDidMount() {
+    await this.setState({
+      name: 'gsp1'
+    })
+    console.log(this.state.name)
+  }
 
   componentDidShow() {}
 
   componentDidHide() {}
+
+  test(v) {
+    console.log('组件fun', v)
+  }
 
   render() {
     return (
@@ -61,6 +74,7 @@ class Index extends Component {
         <View>
           <Text>Hello, World3333</Text>
         </View>
+        <Child btnName={'按钮'} textName={'文字'} test={this.test} />
       </View>
     )
   }
